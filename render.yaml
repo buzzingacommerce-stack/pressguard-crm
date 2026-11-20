@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: pressguard-publishing-crm
+    runtime: node
+    plan: free
+    buildCommand: ""
+    startCommand: "node server.js"
+    envVars:
+      - key: NODE_VERSION
+        value: "24.22.3"
+      - key: HOST
+        value: "0.0.0.0"

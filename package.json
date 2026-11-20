@@ -1,0 +1,14 @@
+{
+  "name": "pressguard-crm",
+  "version": "1.0.0",
+  "description": "PressGuard — Publishing House CEO CRM for Credit-Gated Order Intake, Production Dispatch Control, Anti-7-Day-Loop Collections, and Legal Escalation",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "reset-db": "node -e \"import('./src/seed.js').then(m => m.resetAndSeed())\""
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

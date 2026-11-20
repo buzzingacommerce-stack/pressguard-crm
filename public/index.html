@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PressGuard — Publishing CEO CRM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Light Editorial Sidebar (Mercury / Ramp style) -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+            <path d="m9 10 2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <div class="brand-title" id="brand-company-name">PressGuard</div>
+          <div class="brand-sub" id="sidebar-role-label">CEO Access</div>
+        </div>
+      </div>
+
+      <nav class="nav-menu" id="nav-menu"></nav>
+
+      <div class="sidebar-footer">
+        <button class="nav-item" id="nav-settings" data-view="settings">
+          <span class="nav-icon" id="nav-settings-ico"></span>
+          <span class="nav-label" id="nav-settings-lbl">Settings &amp; Excel</span>
+        </button>
+        <div class="guard-pill" id="guard-pill">
+          <span class="pulse-dot"></span>
+          <span id="guard-pill-text">Credit Protection Active</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <div class="main-wrap">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn hidden" id="btn-mobile-menu" aria-label="Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <h1 class="page-title" id="page-title">CEO Command Center</h1>
+        </div>
+
+        <!-- Global Live Quick Search -->
+        <div class="global-search-wrap" id="global-search-wrap">
+          <span class="search-ico" id="global-search-ico"></span>
+          <input type="text" class="global-search-input" id="global-search-input" placeholder="Search buyer, order, book or city..." autocomplete="off" />
+          <div class="search-dropdown hidden" id="global-search-dropdown"></div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Persistent Bilingual Switcher -->
+          <div class="lang-toggle" role="group" aria-label="Language">
+            <button type="button" class="lang-btn active" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="hi">हिंदी</button>
+          </div>
+
+          <button class="icon-btn" id="btn-help-toggle" title="Quick Guide">
+            <span id="help-btn-ico"></span>
+          </button>
+
+          <button class="role-badge-btn" id="btn-share-access">
+            <span class="role-dot"></span>
+            <span id="active-role-chip">CEO Access</span>
+            <span class="share-tag" id="share-tag-lbl">Share</span>
+          </button>
+
+          <button class="btn btn-primary btn-sm" id="btn-quick-order">
+            <span id="quick-order-ico"></span>
+            <span id="quick-order-lbl">New Order</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Optional Layman Guided Help Strip (toggled by ? button) -->
+      <div class="help-strip hidden" id="help-strip">
+        <div class="help-strip-inner" id="help-strip-body"></div>
+        <button type="button" class="modal-close" id="btn-help-close" aria-label="Close">&times;</button>
+      </div>
+
+      <main class="content-area" id="view-root">
+        <div class="loading-state">Loading PressGuard...</div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Mobile Sidebar Backdrop -->
+  <div class="mobile-backdrop hidden" id="mobile-backdrop"></div>
+
+  <!-- Clean Modal Overlay -->
+  <div class="modal-backdrop hidden" id="modal-backdrop">
+    <div class="modal-box" id="modal-box">
+      <div class="modal-header">
+        <div>
+          <h3 id="modal-title">Modal</h3>
+          <div class="modal-sub" id="modal-sub"></div>
+        </div>
+        <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Context-Preserving Right Slide-Over Drawer -->
+  <div class="drawer-backdrop hidden" id="drawer-backdrop">
+    <div class="drawer-panel" id="drawer-panel">
+      <div class="drawer-header">
+        <div id="drawer-header-content"></div>
+        <button class="modal-close" id="drawer-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="drawer-body" id="drawer-body"></div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
